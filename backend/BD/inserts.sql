@@ -1,3 +1,5 @@
+--Solo pruebas por el momento
+
 insert into dbo.edificios (edificio_id,nombre) values (1,'EBLE')
 
 insert into dbo.edificios (edificio_id,nombre) values (2,'Edificio A')
