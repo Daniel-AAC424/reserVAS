@@ -1,5 +1,5 @@
-create database prueba_reservas_corregida;
-use prueba_reservas_corregida;
+create database prueba_reservas;
+use prueba_reservas;
 
 create table edificios(
        edificio_id int not null primary key,
