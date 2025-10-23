@@ -1,4 +1,4 @@
-USE prueba_reservas_corregida;
+USE prueba_reservas;
 
 CREATE TRIGGER TRG_evitar_solapamiento
 ON reservas
