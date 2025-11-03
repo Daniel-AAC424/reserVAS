@@ -20,54 +20,95 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    
+    //Connecion JDBC a SQL Server
+        public static final String url = "jdbc:sqlserver://DESKTOP-OH1JKVL\\SQLEXPRESS;"+ 
+                "databaseName = reservas_p0;"+"encrypt=true;trustServerCertificate=true";        
+        public static final String user = "dan";
+        public static final String password = "?s0pI02j_nfD";
+    
+    
+    public static void main(String[] args) { //Metodo main
         
-        //ventana del programa    
-        Window window = new Window();
-        window.setVisible(true);
-        window.setLocationRelativeTo(null);
-        
-        
-        //Connecion JDBC a SQL Server
-        String url = "jdbc:sqlserver://DESKTOP-OH1JKVL\\SQLEXPRESS;"+ 
-                "databaseName = prueba_reservas;"+"encrypt=true;trustServerCertificate=true";        
-        String user = "dan";
-        String password = "?s0pI02j_nfD";
-        
-        try {
-            Connection connection = DriverManager.getConnection(url, user, password);
-            System.out.println("Conexion exitosa");
-            
-            
-            //Query Consola
-//            String sql = "select nombre from edificios;";
-//            Statement statement = connection.createStatement();
-//            
-//            ResultSet result = statement.executeQuery(sql);
-//            
-//            int count = 0;
-//            System.out.println("ROW | Edificio ID  | Nombre Edificio ");
-//            
-//            while(result.next()){
-//                count++;
-//                int edificio_id = result.getInt("edificio_id");
-//                String nombre = result.getString("nombre");
-//                
-//                
-//                System.out.println(" "+count+"        "+ edificio_id+"            "+ nombre);
-//            }
-            
-            connection.close();
-            
-        } catch (SQLException ex) {
-            System.out.println("Conexion Fallida");
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        //Termina JDBC
-        
+               
+        //Ventana del programa    
+        Window window = new Window();//declara la clase en main
+        window.setVisible(true);//Have visible la ventana
+        window.setLocationRelativeTo(null);//Centra la ventana
         
         
     }
     
+    public static boolean insertReserva(String carnet,String selec, String selecLab,String pcname,String HoraInicio,Integer TiempoUsoInt) {
+        Connection connection = null;
+        PreparedStatement pstmt = null;
+  
+        
+        try {
+            connection = DriverManager.getConnection(url, user, password);
+            System.out.println("Conexion exitosa");
+            
+            String sql = "INSERT INTO reservas (carnet, edificio, laboratorio, pcname, hora_inicio, hora_salida) " +
+                     "VALUES (?, ?, ?, ?, CAST(? AS TIME), DATEADD(HOUR, ?, CAST(? AS TIME)))";
+        
+        pstmt = connection.prepareStatement(sql);
+        pstmt.setString(1, carnet);
+        pstmt.setString(2, selec);
+        pstmt.setString(3, selecLab);
+        pstmt.setString(4, pcname);
+        pstmt.setString(5, HoraInicio);
+        pstmt.setInt(6, TiempoUsoInt);     // Number of hours to add
+        pstmt.setString(7, HoraInicio); // Base time to add hours to
+            
+                int rowsAffected = pstmt.executeUpdate();
+            //int rowsAffected = pstmt.executeQuery();
+            return rowsAffected > 0;
+            
+        } catch (SQLException e) {
+            System.err.println("Database error: " + e.getMessage());
+            return false;
+        } finally {
+            try {
+                if (pstmt != null) pstmt.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    
+    public static boolean checkCarnetExists(String carnet) {
+    Connection connection = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    
+    try {
+        connection = DriverManager.getConnection(url, user, password);
+        System.out.println("Conexion exitosa para verificar carnet");
+        
+        String sql = "SELECT carnet FROM estudiantes WHERE carnet = ?";
+        pstmt = connection.prepareStatement(sql);
+        pstmt.setString(1, carnet);
+        
+        rs = pstmt.executeQuery();
+        
+        // If result set has at least one row, carnet exists
+        return rs.next();
+        
+    } catch (SQLException e) {
+        System.err.println("Database error: " + e.getMessage());
+        return false;
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (pstmt != null) pstmt.close();
+            if (connection != null) connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
+    
+}
+
