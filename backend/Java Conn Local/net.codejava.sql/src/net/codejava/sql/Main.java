@@ -23,18 +23,40 @@ public class Main {
     
     //Connecion JDBC a SQL Server
         public static final String url = "jdbc:sqlserver://DESKTOP-OH1JKVL\\SQLEXPRESS;"+ 
-                "databaseName = reservas_p0;"+"encrypt=true;trustServerCertificate=true";        
+                "databaseName = reservas_p1;"+"encrypt=true;trustServerCertificate=true";        
         public static final String user = "dan";
         public static final String password = "?s0pI02j_nfD";
     
-    
-    public static void main(String[] args) { //Metodo main
+        public static Connection connection;
         
+        
+    public static void main(String[] args) {
+        
+        try {
+            String url = "jdbc:sqlserver://DESKTOP-OH1JKVL\\SQLEXPRESS;"+ 
+                "databaseName = reservas_p1;"+"encrypt=true;trustServerCertificate=true";
+            String user = "dan";
+            String password = "?s0pI02j_nfD";
+            connection = DriverManager.getConnection(url, user, password);
+            
+            // Then create and show your Window
+            java.awt.EventQueue.invokeLater(() -> {
+                //new Window().setVisible(true);
+            });
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            
+        }
                
         //Ventana del programa    
         Window window = new Window();//declara la clase en main
         window.setVisible(true);//Have visible la ventana
+        
+        window.setSize(1000,600);
         window.setLocationRelativeTo(null);//Centra la ventana
+        window.setResizable(false);
+        
         
         
     }
@@ -51,17 +73,17 @@ public class Main {
             String sql = "INSERT INTO reservas (carnet, edificio, laboratorio, pcname, hora_inicio, hora_salida) " +
                      "VALUES (?, ?, ?, ?, CAST(? AS TIME), DATEADD(HOUR, ?, CAST(? AS TIME)))";
         
-        pstmt = connection.prepareStatement(sql);
-        pstmt.setString(1, carnet);
-        pstmt.setString(2, selec);
-        pstmt.setString(3, selecLab);
-        pstmt.setString(4, pcname);
-        pstmt.setString(5, HoraInicio);
-        pstmt.setInt(6, TiempoUsoInt);     // Number of hours to add
-        pstmt.setString(7, HoraInicio); // Base time to add hours to
+            pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, carnet);
+            pstmt.setString(2, selec);
+            pstmt.setString(3, selecLab);
+            pstmt.setString(4, pcname);
+            pstmt.setString(5, HoraInicio);
+            pstmt.setInt(6, TiempoUsoInt); 
+            pstmt.setString(7, HoraInicio);
             
-                int rowsAffected = pstmt.executeUpdate();
-            //int rowsAffected = pstmt.executeQuery();
+            int rowsAffected = pstmt.executeUpdate();
+            
             return rowsAffected > 0;
             
         } catch (SQLException e) {
@@ -93,7 +115,6 @@ public class Main {
         
         rs = pstmt.executeQuery();
         
-        // If result set has at least one row, carnet exists
         return rs.next();
         
     } catch (SQLException e) {
