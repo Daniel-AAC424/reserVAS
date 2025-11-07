@@ -116,41 +116,51 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel3" max="32767" attributes="0"/>
-                              <Component id="SelectEd" pref="229" max="32767" attributes="0"/>
-                              <Component id="labcomeble" alignment="0" max="32767" attributes="0"/>
-                              <Component id="HText" max="32767" attributes="0"/>
-                              <Component id="HBox" max="32767" attributes="0"/>
-                              <Component id="TText" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="labtxt" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" max="32767" attributes="0"/>
+                                      <Component id="SelectEd" pref="229" max="32767" attributes="0"/>
+                                      <Component id="labcomeble" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="HText" max="32767" attributes="0"/>
+                                      <Component id="HBox" max="32767" attributes="0"/>
+                                      <Component id="UsoTxt" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="labtxt" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="TBox" min="-2" pref="56" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="HorasTxt" min="-2" pref="37" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="DispTxt" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="CT" min="-2" pref="135" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="TBox" min="-2" pref="56" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jLabel6" min="-2" pref="37" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                          <Component id="CONF" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="CT" min="-2" pref="135" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Component id="CONF" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                          <Component id="DispBtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="LAB" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="EspPane" min="-2" max="-2" attributes="0"/>
@@ -178,13 +188,17 @@
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Component id="HBox" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="TText" min="-2" max="-2" attributes="0"/>
+                  <Component id="UsoTxt" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="TBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="HorasTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <Component id="DispTxt" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="DispBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="CT" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="CONF" min="-2" max="-2" attributes="0"/>
@@ -289,7 +303,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="TText">
+        <Component class="javax.swing.JLabel" name="UsoTxt">
           <Properties>
             <Property name="text" type="java.lang.String" value="Escoja su tiempo de uso:"/>
           </Properties>
@@ -329,66 +343,64 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="1" min="-2" pref="475" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="pc0" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="pc17" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="pc13" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="pc9" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="pc5" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="pc1" min="-2" pref="60" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="pc18" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                              <Component id="pc14" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                                  <Component id="pc10" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                      <Component id="pc6" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                                      <Component id="pc2" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="LABNAME" alignment="1" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="pc17" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc13" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc9" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc5" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc1" min="-2" pref="60" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="pc18" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                          <Component id="pc14" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                              <Component id="pc10" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                  <Component id="pc6" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                                  <Component id="pc2" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="pc19" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="pc15" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="pc11" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="pc7" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="pc3" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="pc20" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="pc16" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="pc12" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="pc8" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="pc4" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                      </Group>
                                   </Group>
-                                  <Component id="LABNAME" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="pc19" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc15" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc11" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc7" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc3" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="pc20" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc16" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc12" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc8" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <Component id="pc4" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="88" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                       <Component id="LABNAME" min="-2" pref="37" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="pc0" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -438,6 +450,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="LABNAME"/>
               </Properties>
             </Component>
@@ -770,9 +783,22 @@
             </Container>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="HorasTxt">
           <Properties>
             <Property name="text" type="java.lang.String" value="Horas"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="DispBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="OK"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DispBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="DispTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Confirmar Disponibilidad:"/>
           </Properties>
         </Component>
       </SubComponents>
