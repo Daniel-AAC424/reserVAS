@@ -22,7 +22,7 @@ public class Main {
     
     //Connecion JDBC a SQL Server
         public static final String url = "jdbc:sqlserver://DESKTOP-OH1JKVL\\SQLEXPRESS;"+ 
-                "databaseName = reservas_p1;"+"encrypt=true;trustServerCertificate=true";        
+                "databaseName=reservas_p1;"+"encrypt=true;trustServerCertificate=true";        
         public static final String user = "dan";
         public static final String password = "?s0pI02j_nfD";
     
@@ -33,7 +33,7 @@ public class Main {
         
         try {
             String url = "jdbc:sqlserver://DESKTOP-OH1JKVL\\SQLEXPRESS;"+ 
-                "databaseName = reservas_p1;"+"encrypt=true;trustServerCertificate=true";
+                "databaseName=reservas_p1;"+"encrypt=true;trustServerCertificate=true";
             String user = "dan";
             String password = "?s0pI02j_nfD";
             connection = DriverManager.getConnection(url, user, password);
