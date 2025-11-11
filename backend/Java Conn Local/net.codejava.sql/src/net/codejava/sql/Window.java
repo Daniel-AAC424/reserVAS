@@ -21,6 +21,8 @@ public class Window extends javax.swing.JFrame {
         MenuP.setSize(1000,600);
         Mpane.setSize(1000,600);
         
+        loadManualHidingState();
+        
     }
 
     /**
@@ -32,6 +34,7 @@ public class Window extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        FileC = new javax.swing.JFileChooser();
         MenuP = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         MensajeTxt = new javax.swing.JLabel();
@@ -70,18 +73,26 @@ public class Window extends javax.swing.JFrame {
         pc20 = new javax.swing.JButton();
         pc17 = new javax.swing.JButton();
         pc18 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        CTV = new javax.swing.JLabel();
+        RepBtn = new javax.swing.JButton();
+        DiaTxt = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        CTV = new javax.swing.JTextArea();
         EspPane = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         pcnametxt = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        pcarea = new javax.swing.JLabel();
+        EditBtn = new javax.swing.JButton();
+        DeshBtn = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        DescAr = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        pcdesc = new javax.swing.JLabel();
+        ArAr = new javax.swing.JTextArea();
+        ConfAr = new javax.swing.JTextField();
+        showPcBtn = new javax.swing.JButton();
         HorasTxt = new javax.swing.JLabel();
         DispBtn = new javax.swing.JButton();
         DispTxt = new javax.swing.JLabel();
+        AdminTxt = new javax.swing.JLabel();
+        AdminBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -107,27 +118,26 @@ public class Window extends javax.swing.JFrame {
         MenuPLayout.setHorizontalGroup(
             MenuPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuPLayout.createSequentialGroup()
-                .addContainerGap(301, Short.MAX_VALUE)
+                .addGap(280, 280, 280)
+                .addComponent(jLabel1)
+                .addGap(0, 300, Short.MAX_VALUE))
+            .addGroup(MenuPLayout.createSequentialGroup()
+                .addGap(402, 402, 402)
                 .addGroup(MenuPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuPLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(259, 259, 259))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuPLayout.createSequentialGroup()
-                        .addGroup(MenuPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CarnetWr, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MensajeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(392, 392, 392))))
+                    .addComponent(CarnetWr, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MensajeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MenuPLayout.setVerticalGroup(
             MenuPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuPLayout.createSequentialGroup()
-                .addGap(231, 231, 231)
+                .addGap(244, 244, 244)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(MensajeTxt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CarnetWr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(265, Short.MAX_VALUE))
+                .addGap(264, 264, 264))
         );
 
         jLabel3.setText("Escoja su edificio");
@@ -347,64 +357,85 @@ public class Window extends javax.swing.JFrame {
             }
         });
 
-        CTV.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        CTV.setText("Detalles Reserva");
-        CTV.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        CTV.setAutoscrolls(true);
-        jScrollPane1.setViewportView(CTV);
+        RepBtn.setText("Reporte");
+        RepBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RepBtnActionPerformed(evt);
+            }
+        });
+
+        DiaTxt.setText("Inserte fecha YYYY-MM-DD");
+        DiaTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DiaTxtActionPerformed(evt);
+            }
+        });
+
+        CTV.setColumns(20);
+        CTV.setRows(5);
+        jScrollPane3.setViewportView(CTV);
 
         javax.swing.GroupLayout LABLayout = new javax.swing.GroupLayout(LAB);
         LAB.setLayout(LABLayout);
         LABLayout.setHorizontalGroup(
             LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(LABLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
+                .addGap(27, 27, 27)
+                .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(DiaTxt)
+                    .addComponent(RepBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LABNAME, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LABLayout.createSequentialGroup()
+                .addContainerGap(95, Short.MAX_VALUE)
                 .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pc0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(LABNAME, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, LABLayout.createSequentialGroup()
+                    .addGroup(LABLayout.createSequentialGroup()
+                        .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pc17, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(pc18, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(pc17, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(27, 27, 27)
-                            .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(pc18, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pc14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(pc10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(pc6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(pc2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addGap(33, 33, 33)
-                            .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(pc19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc15, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(pc20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(pc4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(pc14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(pc10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(pc6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pc2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(33, 33, 33)
+                        .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pc19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc15, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pc20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pc4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(83, 83, 83))
         );
         LABLayout.setVerticalGroup(
             LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LABLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addGap(32, 32, 32)
+                .addComponent(RepBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DiaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LABNAME, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(pc0)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addGroup(LABLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pc1)
                     .addComponent(pc2)
@@ -434,23 +465,53 @@ public class Window extends javax.swing.JFrame {
                     .addComponent(pc18)
                     .addComponent(pc19)
                     .addComponent(pc20))
-                .addGap(55, 55, 55)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setText("Espicificaciones:");
 
+        pcnametxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pcnametxt.setText("PC");
 
-        pcarea.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        pcarea.setText("Programas:");
-        pcarea.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jScrollPane3.setViewportView(pcarea);
+        EditBtn.setText("Editar");
+        EditBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditBtnActionPerformed(evt);
+            }
+        });
 
-        pcdesc.setText("Descripcion:");
-        pcdesc.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jScrollPane2.setViewportView(pcdesc);
+        DeshBtn.setText("OFF");
+        DeshBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeshBtnActionPerformed(evt);
+            }
+        });
+
+        DescAr.setEditable(false);
+        DescAr.setColumns(20);
+        DescAr.setRows(5);
+        jScrollPane4.setViewportView(DescAr);
+
+        ArAr.setEditable(false);
+        ArAr.setColumns(20);
+        ArAr.setRows(5);
+        jScrollPane2.setViewportView(ArAr);
+
+        ConfAr.setText("Confirmar area");
+        ConfAr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfArActionPerformed(evt);
+            }
+        });
+
+        showPcBtn.setText("ON");
+        showPcBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showPcBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout EspPaneLayout = new javax.swing.GroupLayout(EspPane);
         EspPane.setLayout(EspPaneLayout);
@@ -459,31 +520,45 @@ public class Window extends javax.swing.JFrame {
             .addGroup(EspPaneLayout.createSequentialGroup()
                 .addGroup(EspPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(EspPaneLayout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(pcnametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2)
+                        .addGroup(EspPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pcnametxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(EspPaneLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(12, 12, 12)
+                                .addComponent(DeshBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(showPcBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(EspPaneLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(EspPaneLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(EspPaneLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addGap(10, 10, 10)
+                        .addGroup(EspPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane4)
+                            .addGroup(EspPaneLayout.createSequentialGroup()
+                                .addComponent(EditBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ConfAr, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         EspPaneLayout.setVerticalGroup(
             EspPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EspPaneLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel2)
+                .addGap(19, 19, 19)
+                .addGroup(EspPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(DeshBtn)
+                    .addComponent(showPcBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pcnametxt)
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(EspPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditBtn)
+                    .addComponent(ConfAr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         HorasTxt.setText("Horas");
@@ -497,6 +572,16 @@ public class Window extends javax.swing.JFrame {
 
         DispTxt.setText("Confirmar Disponibilidad:");
 
+        AdminTxt.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AdminTxt.setText("Herramientas Administrador:");
+
+        AdminBtn.setText("ENTRAR");
+        AdminBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdminBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout MpaneLayout = new javax.swing.GroupLayout(Mpane);
         Mpane.setLayout(MpaneLayout);
         MpaneLayout.setHorizontalGroup(
@@ -504,79 +589,78 @@ public class Window extends javax.swing.JFrame {
             .addGroup(MpaneLayout.createSequentialGroup()
                 .addGroup(MpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MpaneLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
                         .addGroup(MpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SelectEd, 0, 0, Short.MAX_VALUE)
+                            .addComponent(labcomeble, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UsoTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(MpaneLayout.createSequentialGroup()
-                                .addGap(22, 22, 22)
                                 .addGroup(MpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(SelectEd, 0, 229, Short.MAX_VALUE)
-                                    .addComponent(labcomeble, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(HText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(HBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(UsoTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labtxt)
                                     .addGroup(MpaneLayout.createSequentialGroup()
-                                        .addGroup(MpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(labtxt)
-                                            .addGroup(MpaneLayout.createSequentialGroup()
-                                                .addComponent(TBox, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(HorasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(DispTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGroup(MpaneLayout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addGroup(MpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CT, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(MpaneLayout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addComponent(CONF)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                        .addComponent(TBox, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(HorasTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(DispTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(AdminTxt)
+                                    .addComponent(CT, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 41, Short.MAX_VALUE))))
                     .addGroup(MpaneLayout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(DispBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(57, 57, 57)
+                        .addComponent(DispBtn))
+                    .addGroup(MpaneLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(CONF))
+                    .addGroup(MpaneLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(AdminBtn)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LAB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EspPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(EspPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         MpaneLayout.setVerticalGroup(
             MpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MpaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LAB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(MpaneLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SelectEd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(labtxt)
-                .addGap(18, 18, 18)
-                .addComponent(labcomeble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(HText)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(HBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(UsoTxt)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(MpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HorasTxt))
-                .addGap(9, 9, 9)
-                .addComponent(DispTxt)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DispBtn)
-                .addGap(45, 45, 45)
-                .addComponent(CT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CONF)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MpaneLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(EspPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(MpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(EspPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(MpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(MpaneLayout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(SelectEd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(labtxt)
+                            .addGap(18, 18, 18)
+                            .addComponent(labcomeble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(HText)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(HBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(UsoTxt)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(MpaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(TBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(HorasTxt))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(DispTxt)
+                            .addGap(9, 9, 9)
+                            .addComponent(DispBtn)
+                            .addGap(15, 15, 15)
+                            .addComponent(CT)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CONF)
+                            .addGap(24, 24, 24)
+                            .addComponent(AdminTxt)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(AdminBtn))
+                        .addComponent(LAB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -592,7 +676,9 @@ public class Window extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MenuP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(MenuP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -603,174 +689,11 @@ public class Window extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CarnetWrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarnetWrActionPerformed
-        // TODO add your handling code here:
-
-        String carnet = CarnetWr.getText();
-
-    if (carnet.isEmpty()) {
-        return;
-    }
-    
-    boolean exists = Main.checkCarnetExists(carnet); //Revisa si el carnet existe
-    
-    if (exists) {
-        
-        System.out.println("Carnet encontrado en la Base de Datos"); //Carnet existe
-        
-        Mpane.setVisible(true);
-        MenuP.setVisible(false);
-        Mpane.setVisible(true);
-        labtxt.setVisible(false);
-        labcomeble.setVisible(false);
-        LAB.setVisible(false);
-        
-        HText.setVisible(false);
-        HBox.setVisible(false);
-        UsoTxt.setVisible(false);
-        TBox.setVisible(false);
-        CT.setVisible(false);
-        CTV.setVisible(false);
-        CONF.setVisible(false);
-        UsoTxt.setVisible(false);
-        HorasTxt.setVisible(false);
-        DispTxt.setVisible(false);
-        DispBtn.setVisible(false);
-
-       EspPane.setVisible(false);
-       
-        
-      
-    } else {
-
-        System.out.println("Carnet no encontrado en la Base de Datos");//Canet no existe
-        MensajeTxt.setText("Insertar un Carnet Valido");
-
-        CarnetWr.setText("");
-        CarnetWr.requestFocus();
-    }
-    
-    }//GEN-LAST:event_CarnetWrActionPerformed
-
     private void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
         // TODO add your handling code here
 
         
     }//GEN-LAST:event_formComponentHidden
-
-    private void SelectEdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectEdActionPerformed
-        // TODO add your handling code here:
-        
-        
-        String selec = SelectEd.getSelectedItem() + "";
-        
-        if(selec.equals("EBLE")){
-            labtxt.setVisible(true);
-            labcomeble.setVisible(true);
-            
-            //System.out.println("yup");
-        }else if(selec.equals("Edificio A")){
-            labcomeble.setVisible(false);
-            labtxt.setVisible(true);
-            labtxt.setText("Se encuentra en el Computo 1");
-            
-            HText.setVisible(true);
-            HBox.setVisible(true);
-            UsoTxt.setVisible(true);
-            TBox.setVisible(true);
-            DispTxt.setVisible(true);
-            DispBtn.setVisible(true);
-            //LAB.setVisible(true);
-            LABNAME.setText("Computo 1");
-            String selecLab = "Computo 1";
-            
-            
-        }else if(selec.equals("Biblioteca Ciencias Sociales")){
-            labcomeble.setVisible(false);
-            labtxt.setVisible(true);
-            labtxt.setText("Se encuentra en biblioteca");
-            String selecLab = "Computo Biblioteca";
-            LABNAME.setText("Computo CS");
-            //LAB.setVisible(true);   
-            HText.setVisible(true);
-            HBox.setVisible(true);
-            UsoTxt.setVisible(true);
-            TBox.setVisible(true);
-            DispTxt.setVisible(true);
-            DispBtn.setVisible(true);
-            
-        }
-    }//GEN-LAST:event_SelectEdActionPerformed
-
-    private void labcomebleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labcomebleActionPerformed
-        // TODO add your handling code here:
-        
-        
-        String selecLab = labcomeble.getSelectedItem()+"";
-        
-        if(selecLab.equals("Computo 5")){
-            //LAB.setVisible(true);   
-            HText.setVisible(true);
-            HBox.setVisible(true);
-            UsoTxt.setVisible(true);
-            TBox.setVisible(true);
-            DispTxt.setVisible(true);
-            DispBtn.setVisible(true);
-            LABNAME.setText("Computo 5");
-                       
-        }else if(selecLab.equals("Computo 6")){
-            //LAB.setVisible(true);   
-            HText.setVisible(true);
-            HBox.setVisible(true);
-            UsoTxt.setVisible(true);
-            TBox.setVisible(true);
-            DispTxt.setVisible(true);
-            DispBtn.setVisible(true);
-            LABNAME.setText("Computo 6");
-            
-        }else if(selecLab.equals("Animacion")){
-            //LAB.setVisible(true);   
-            HText.setVisible(true);
-            HBox.setVisible(true);
-            UsoTxt.setVisible(true);
-            TBox.setVisible(true);
-            DispTxt.setVisible(true);
-            DispBtn.setVisible(true);
-            LABNAME.setText("Animacion");
-            
-        }else if(selecLab.equals("Videojuegos")){
-            //LAB.setVisible(true);   
-            HText.setVisible(true);
-            HBox.setVisible(true);
-            UsoTxt.setVisible(true);
-            TBox.setVisible(true);
-            DispTxt.setVisible(true);
-            DispBtn.setVisible(true);
-            LABNAME.setText("Video Juegos");
-            
-        }else if(selecLab.equals("Cisco")){
-            //LAB.setVisible(true);   
-            HText.setVisible(true);
-            HBox.setVisible(true);
-            UsoTxt.setVisible(true);
-            TBox.setVisible(true);
-            DispTxt.setVisible(true);
-            DispBtn.setVisible(true);
-            LABNAME.setText("Cisco");
-            
-        }else if(selecLab.equals("Impresoras 3D")){
-            //LAB.setVisible(true);   
-            HText.setVisible(true);
-            HBox.setVisible(true);
-            UsoTxt.setVisible(true);
-            TBox.setVisible(true);
-            DispTxt.setVisible(true);
-            DispBtn.setVisible(true);
-            LABNAME.setText("LAB Impresoras");
-            
-        }
-        
-    }//GEN-LAST:event_labcomebleActionPerformed
  
     private void setPcDescription(String pcName) {
         
@@ -780,7 +703,7 @@ public class Window extends javax.swing.JFrame {
                       "INNER JOIN areas a ON a.area = p.area " +
                       "WHERE pcname = ?";
         
-        // Assuming you have a connection object from your main class
+       
         java.sql.PreparedStatement stmt = Main.connection.prepareStatement(query);
         stmt.setString(1, pcName);
         java.sql.ResultSet rs = stmt.executeQuery();
@@ -792,19 +715,20 @@ public class Window extends javax.swing.JFrame {
             String storage = rs.getString("espacio");
             String os = rs.getString("os");
             
-            // Format the description as you prefer
-            String description = String.format("Processor: %s, Memory: %s, Graphics: %s, Storage: %s, OS: %s", 
+            String description = String.format("Procesador: %s\nMemoria: %s\nGrafica: %s\nEspacio: %s\nOS: %s", 
                                              processor, memory, graphics, storage, os);
-            pcdesc.setText(description);
+            
+            DescAr.setText("Descripcion: "+description);
         } else {
-            pcdesc.setText("No information found");
+            
+            
         }
         
         rs.close();
         stmt.close();
     } catch (java.sql.SQLException e) {
         e.printStackTrace();
-        pcdesc.setText("Error loading PC description");
+        
     }
 }
 
@@ -822,18 +746,19 @@ public class Window extends javax.swing.JFrame {
             String area = rs.getString("area");
             String programs = rs.getString("listado_programas");
             
-            // Format the area information as you prefer
-            String areaInfo = String.format("Area: %s, Programs: %s", area, programs);
-            pcarea.setText(areaInfo);
+            
+            String areaInfo = String.format("Area: %s\nProgramas: %s", area, programs);
+            
+            ArAr.setText(areaInfo);
         } else {
-            pcarea.setText("No area information found");
+            ArAr.setText("No hy informacion de la area");
         }
         
         rs.close();
         stmt.close();
     } catch (java.sql.SQLException e) {
         e.printStackTrace();
-        pcarea.setText("Error loading area information");
+        ArAr.setText("Error cargando informacion");
     }
 }
     
@@ -843,9 +768,9 @@ public class Window extends javax.swing.JFrame {
     if(selec.equals("EBLE")){
         return labcomeble.getSelectedItem().toString();
     }else if(selec.equals("Edificio A")){
-        return "Computo 1"; // Default to Computo 1 for Edificio A
+        return "Computo 1";
     }else if(selec.equals("Biblioteca Ciencias Sociales")){
-        return "Computo Biblioteca"; // Default to Computo Biblioteca for Biblioteca
+        return "Computo Biblioteca";
     }
     return "";
 }
@@ -877,504 +802,6 @@ public class Window extends javax.swing.JFrame {
     return "";
 }
 
-    private void CONFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CONFActionPerformed
-        // TODO add your handling code here:
-        
-        String carnet = CarnetWr.getText();
-        //String pcname = pc1.getText();
-        
-        String pcname = selectedPcName;
-        
-        String HoraInicio = HBox.getSelectedItem()+"";
-        //String TiempoUso = TBox.getSelectedItem()+""; 
-        
-        int TiempoUsoInt;
-    try {
-        TiempoUsoInt = Integer.parseInt(TBox.getSelectedItem().toString());
-    } catch (NumberFormatException e) {
-       
-        return;
-    }
-        
-        //String selecLab = labcomeble.getSelectedItem()+"";
-        String selec = SelectEd.getSelectedItem() + "";
-        String selecLab = getDisplayLabName();
-        
-        
-        
-        boolean success = Main.insertReserva(carnet,selec,selecLab,pcname,HoraInicio,TiempoUsoInt);
-        
-        if (success) {
-            CTV.setText("Alumno: "+carnet+" Edificio: "+selec+" Laboratorio: "
-                +selecLab+" PC: "+pcname+" Hora Incio: "+HoraInicio+" Tiempo de uso: "+TiempoUsoInt+" Horas");
-        System.out.println( "Reserva insertada exitosamente!");
-    } else {
-            CTV.setText(pcname+" No Disponible en horario seleccionado.");
-        System.out.println("Error al insertar reserva");
-    }
-    }//GEN-LAST:event_CONFActionPerformed
-
-    private void HBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HBoxActionPerformed
-
-        
-        //String HoraInicio = HBox.getSelectedItem()+"";
-        
-        
-    }//GEN-LAST:event_HBoxActionPerformed
-
-    private void TBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBoxActionPerformed
-        // TODO add your handling code here:
-        
-        //String TiempoUso = TBox.getSelectedItem()+"";
-    }//GEN-LAST:event_TBoxActionPerformed
-
-    private void pc18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc18ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc18.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-        //pcdesc.setLineWrap(true);
-        //pcdesc.setWrapStyleWord(true);
-
-    }//GEN-LAST:event_pc18ActionPerformed
-
-    private void pc17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc17ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc17.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc17ActionPerformed
-
-    private void pc20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc20ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc20.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc20ActionPerformed
-
-    private void pc19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc19ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc19.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc19ActionPerformed
-
-    private void pc14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc14ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc14.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc14ActionPerformed
-
-    private void pc13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc13ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc13.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc13ActionPerformed
-
-    private void pc16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc16ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc16.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc16ActionPerformed
-
-    private void pc15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc15ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc15.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc15ActionPerformed
-
-    private void pc10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc10ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc10.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc10ActionPerformed
-
-    private void pc9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc9ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc9.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc9ActionPerformed
-
-    private void pc12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc12ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc12.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc12ActionPerformed
-
-    private void pc11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc11ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc11.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc11ActionPerformed
-
-    private void pc6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc6ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc6.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc6ActionPerformed
-
-    private void pc5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc5ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc5.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc5ActionPerformed
-
-    private void pc8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc8ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc8.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc8ActionPerformed
-
-    private void pc7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc7ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc7.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc7ActionPerformed
-
-    private void pc4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc4ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc4.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc4ActionPerformed
-
-    private void pc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc3ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc3.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc3ActionPerformed
-
-    private void pc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc2ActionPerformed
-        // TODO add your handling code here:
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc2.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc2ActionPerformed
-
-    private void pc0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc0ActionPerformed
-        // TODO add your handling code here:
-
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc0.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-    }//GEN-LAST:event_pc0ActionPerformed
-
-    private void pc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc1ActionPerformed
-        // TODO add your handling code here:
-
-        
-        CT.setVisible(true);
-        CTV.setVisible(true);
-        CONF.setVisible(true);
-
-        EspPane.setVisible(true);
-
-        String basePcName = pc1.getText();
-        String selectedLab = getCurrentLabForSuffix();
-        String labSuffix = getLabSuffix(selectedLab);
-
-        selectedPcName = basePcName + "_" + labSuffix;
-
-        pcnametxt.setText(selectedPcName) ;
-
-        setPcDescription(selectedPcName);
-        setPcArea(selectedPcName);
-
-    }//GEN-LAST:event_pc1ActionPerformed
-
     private void checkAndHideOccupiedPCs() {
         try {
             
@@ -1383,10 +810,10 @@ public class Window extends javax.swing.JFrame {
             String startTime = HBox.getSelectedItem().toString();
             String usageTime = TBox.getSelectedItem().toString();
 
-            // Calculate end time based on usage
+            
             String endTime = calculateEndTime(startTime, usageTime);
 
-            // Call your SQL function
+           
             String query = "SELECT * FROM FN_DisponibilidadPCs(?, CAST(GETDATE() AS DATE), ?, ?)";
 
             java.sql.PreparedStatement stmt = net.codejava.sql.Main.connection.prepareStatement(query);
@@ -1396,7 +823,7 @@ public class Window extends javax.swing.JFrame {
 
             java.sql.ResultSet rs = stmt.executeQuery();
 
-            // Hide occupied PCs
+           
             while (rs.next()) {
                 String pcName = rs.getString("pcname");
                 String estado = rs.getString("estado");
@@ -1408,20 +835,92 @@ public class Window extends javax.swing.JFrame {
 
             rs.close();
             stmt.close();
-
-            //JOptionPane.showMessageDialog(this, "Availability check completed!");
+            
+            hideManuallyHiddenPCs();
 
         } catch (java.sql.SQLException e) {
             e.printStackTrace();
-            //JOptionPane.showMessageDialog(this, "Error checking availability");
+            
         }
     } 
 
+    private boolean[] manuallyHiddenPCs = new boolean[21]; // PC0 to PC20
+
+
+    private void hideManuallyHiddenPCs() {
+        for (int i = 0; i <= 20; i++) {
+            if (manuallyHiddenPCs[i]) {
+                hidePCButton("PC" + i);
+            }
+        }
+    }
+
+
+    private int extractPcNumber(String fullPcName) {
+        try {
+            
+            String pcNumberStr = fullPcName.split("_")[0].substring(2);
+            return Integer.parseInt(pcNumberStr);
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
+private void loadManualHidingState() {
+    try {
+        java.io.File file = new java.io.File("pc_hiding_state.txt");
+        if (file.exists()) {
+            java.util.Scanner scanner = new java.util.Scanner(file);
+            int index = 0;
+            while (scanner.hasNextLine() && index <= 20) {
+                String line = scanner.nextLine().trim();
+                manuallyHiddenPCs[index] = "true".equals(line);
+                index++;
+            }
+            scanner.close();
+                        
+            hideManuallyHiddenPCs();
+        }
+    } catch (java.io.IOException e) {
+        
+        manuallyHiddenPCs = new boolean[21];
+    }
+}
+
+    
+
+    private void saveManualHidingState() {
+        try {
+            java.io.PrintWriter writer = new java.io.PrintWriter("pc_hiding_state.txt");
+            for (int i = 0; i <= 20; i++) {
+                writer.println(manuallyHiddenPCs[i]);
+            }
+            writer.close();
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+            
+        }
+    }
+
+
+
+    private void resetManualHiding() {
+        for (int i = 0; i <= 20; i++) {
+            manuallyHiddenPCs[i] = false;
+        }
+
+        showAllPCs();
+        checkAndHideOccupiedPCs();
+        saveManualHidingState();
+
+        
+    }
+
+    
     private void hidePCButton(String fullPcName) {
     // Extrae el numero de pc solamente
     String pcNumber = fullPcName.split("_")[0];
     
-    // Map PC numbers to buttons
     switch (pcNumber) {
         case "PC0": pc0.setVisible(false); break;
         case "PC1": pc1.setVisible(false); break;
@@ -1463,7 +962,7 @@ public class Window extends javax.swing.JFrame {
         return String.format("%02d:00", hour);
         
     } catch (Exception e) {
-        return "12:00"; // Default
+        return "12:00";
     }
 }
     
@@ -1491,61 +990,911 @@ public class Window extends javax.swing.JFrame {
     pc20.setVisible(true);
 }
     
+    private void CarnetWrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarnetWrActionPerformed
+        // TODO add your handling code here:
+
+        String carnet = CarnetWr.getText();
+
+        
+
+        if (carnet.isEmpty()) {
+            return;
+        }
+
+        boolean exists = Main.checkCarnetExists(carnet); //Revisa si el carnet existe
+
+        if (exists) {
+
+            System.out.println("Carnet encontrado en la Base de Datos"); //Carnet existe
+
+            Mpane.setVisible(true);
+            MenuP.setVisible(false);
+            Mpane.setVisible(true);
+            labtxt.setVisible(false);
+            labcomeble.setVisible(false);
+            LAB.setVisible(false);
+
+            HText.setVisible(false);
+            HBox.setVisible(false);
+            UsoTxt.setVisible(false);
+            TBox.setVisible(false);
+            CT.setVisible(false);
+            CTV.setVisible(false);
+            CONF.setVisible(false);
+            UsoTxt.setVisible(false);
+            HorasTxt.setVisible(false);
+            DispTxt.setVisible(false);
+            DispBtn.setVisible(false);
+
+            EspPane.setVisible(false);
+            
+            AdminTxt.setVisible(false);
+            AdminBtn.setVisible(false);
+            RepBtn.setVisible(false);
+            DeshBtn.setVisible(false);
+            EditBtn.setVisible(false);
+            ConfAr.setVisible(false);
+            DiaTxt.setVisible(false);
+
+        } else {
+
+            System.out.println("Carnet no encontrado en la Base de Datos");//Canet no existe
+            MensajeTxt.setText("Insertar un Carnet Valido");
+
+            CarnetWr.setText("");
+            CarnetWr.requestFocus();
+        }
+
+    }//GEN-LAST:event_CarnetWrActionPerformed
+
+    private void AdminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminBtnActionPerformed
+        // TODO add your handling code here:
+        RepBtn.setVisible(true);
+        DeshBtn.setVisible(true);
+        EditBtn.setVisible(true);
+        ConfAr.setVisible(true);
+        DiaTxt.setVisible(true);
+        showPcBtn.setVisible(true);
+        
+        
+    }//GEN-LAST:event_AdminBtnActionPerformed
+
     private void DispBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DispBtnActionPerformed
         // TODO add your handling code here:
-        
+
         showAllPCs(); //Muestra todas las PCS otra vez
         checkAndHideOccupiedPCs(); //Esconde las PCS reservadas
         LAB.setVisible(true);//Muestra el panel para escojer las PCS
 
+        String carnet = CarnetWr.getText();
+
+        if("AC100424".equals(carnet)){
+            AdminTxt.setVisible(true);
+            AdminBtn.setVisible(true);
+            RepBtn.setVisible(false);
+            DeshBtn.setVisible(false);
+            EditBtn.setVisible(false);
+            ConfAr.setVisible(false);
+            DiaTxt.setVisible(false);
+            showPcBtn.setVisible(false);
+            
+
+        }else{
+            AdminTxt.setVisible(false);
+            AdminBtn.setVisible(false);
+            RepBtn.setVisible(false);
+            DeshBtn.setVisible(false);
+            EditBtn.setVisible(false);
+            ConfAr.setVisible(false);
+            DiaTxt.setVisible(false);
+            showPcBtn.setVisible(false);
+        }
     }//GEN-LAST:event_DispBtnActionPerformed
 
+    private void pc18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc18ActionPerformed
+        // TODO add your handling code here:
 
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Window().setVisible(true);
-//            }
-//        });
-//    }
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc18.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+        //pcdesc.setLineWrap(true);
+        //pcdesc.setWrapStyleWord(true);
+    }//GEN-LAST:event_pc18ActionPerformed
+
+    private void pc17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc17ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc17.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc17ActionPerformed
+
+    private void pc20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc20ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc20.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc20ActionPerformed
+
+    private void pc19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc19ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc19.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc19ActionPerformed
+
+    private void pc14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc14ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc14.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc14ActionPerformed
+
+    private void pc13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc13ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc13.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc13ActionPerformed
+
+    private void pc16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc16ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc16.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc16ActionPerformed
+
+    private void pc15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc15ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc15.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc15ActionPerformed
+
+    private void pc10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc10ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc10.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc10ActionPerformed
+
+    private void pc9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc9ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc9.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc9ActionPerformed
+
+    private void pc12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc12ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc12.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc12ActionPerformed
+
+    private void pc11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc11ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc11.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc11ActionPerformed
+
+    private void pc6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc6ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc6.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc6ActionPerformed
+
+    private void pc5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc5ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc5.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc5ActionPerformed
+
+    private void pc8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc8ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc8.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc8ActionPerformed
+
+    private void pc7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc7ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc7.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc7ActionPerformed
+
+    private void pc4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc4ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc4.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc4ActionPerformed
+
+    private void pc3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc3ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc3.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc3ActionPerformed
+
+    private void pc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc2ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc2.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc2ActionPerformed
+
+    private void pc0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc0ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc0.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc0ActionPerformed
+
+    private void pc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc1ActionPerformed
+        // TODO add your handling code here:
+
+        CT.setVisible(true);
+        CTV.setVisible(true);
+        CONF.setVisible(true);
+
+        EspPane.setVisible(true);
+
+        String basePcName = pc1.getText();
+        String selectedLab = getCurrentLabForSuffix();
+        String labSuffix = getLabSuffix(selectedLab);
+
+        selectedPcName = basePcName + "_" + labSuffix;
+
+        pcnametxt.setText(selectedPcName) ;
+
+        setPcDescription(selectedPcName);
+        setPcArea(selectedPcName);
+    }//GEN-LAST:event_pc1ActionPerformed
+
+    private void CONFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CONFActionPerformed
+        // TODO add your handling code here:
+
+        String carnet = CarnetWr.getText();
+        //String pcname = pc1.getText();
+
+        String pcname = selectedPcName;
+
+        String HoraInicio = HBox.getSelectedItem()+"";
+        
+
+        int TiempoUsoInt;
+        try {
+            TiempoUsoInt = Integer.parseInt(TBox.getSelectedItem().toString());
+        } catch (NumberFormatException e) {
+
+            return;
+        }
+
+        
+        String selec = SelectEd.getSelectedItem() + "";
+        String selecLab = getDisplayLabName();
+
+        boolean success = Main.insertReserva(carnet,selec,selecLab,pcname,HoraInicio,TiempoUsoInt);
+
+        if (success) {
+            CTV.setText("Alumno: "+carnet+"\nEdificio: "+selec+"\nLaboratorio: "
+                +selecLab+" \nPC: "+pcname+"\nHora Incio: "+HoraInicio+"\nTiempo de uso: "+TiempoUsoInt+" Horas");
+            System.out.println( "Reserva insertada exitosamente!");
+        } else {
+            CTV.setText(pcname+" No Disponible en horario seleccionado.");
+            System.out.println("Error al insertar reserva");
+        }
+    }//GEN-LAST:event_CONFActionPerformed
+
+    private void TBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBoxActionPerformed
+        // TODO add your handling code here:
+
+        
+    }//GEN-LAST:event_TBoxActionPerformed
+
+    private void HBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HBoxActionPerformed
+
+        
+    }//GEN-LAST:event_HBoxActionPerformed
+
+    private void labcomebleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labcomebleActionPerformed
+        // TODO add your handling code here:
+
+        String selecLab = labcomeble.getSelectedItem()+"";
+
+        if(selecLab.equals("Computo 5")){
+            //LAB.setVisible(true);
+            HText.setVisible(true);
+            HBox.setVisible(true);
+            UsoTxt.setVisible(true);
+            HorasTxt.setVisible(true);
+            TBox.setVisible(true);
+            DispTxt.setVisible(true);
+            DispBtn.setVisible(true);
+            LABNAME.setText("Computo 5");
+
+        }else if(selecLab.equals("Computo 6")){
+            //LAB.setVisible(true);
+            HText.setVisible(true);
+            HBox.setVisible(true);
+            UsoTxt.setVisible(true);
+            HorasTxt.setVisible(true);
+            TBox.setVisible(true);
+            DispTxt.setVisible(true);
+            DispBtn.setVisible(true);
+            LABNAME.setText("Computo 6");
+
+        }else if(selecLab.equals("Animacion")){
+            //LAB.setVisible(true);
+            HText.setVisible(true);
+            HBox.setVisible(true);
+            UsoTxt.setVisible(true);
+            HorasTxt.setVisible(true);
+            TBox.setVisible(true);
+            DispTxt.setVisible(true);
+            DispBtn.setVisible(true);
+            LABNAME.setText("Animacion");
+
+        }else if(selecLab.equals("Videojuegos")){
+            //LAB.setVisible(true);
+            HText.setVisible(true);
+            HBox.setVisible(true);
+            UsoTxt.setVisible(true);
+            TBox.setVisible(true);
+            HorasTxt.setVisible(true);
+            DispTxt.setVisible(true);
+            DispBtn.setVisible(true);
+            LABNAME.setText("Videojuegos");
+
+        }else if(selecLab.equals("Cisco")){
+            //LAB.setVisible(true);
+            HText.setVisible(true);
+            HBox.setVisible(true);
+            UsoTxt.setVisible(true);
+            HorasTxt.setVisible(true);
+            TBox.setVisible(true);
+            DispTxt.setVisible(true);
+            DispBtn.setVisible(true);
+            LABNAME.setText("Cisco");
+
+        }else if(selecLab.equals("Impresoras 3D")){
+            //LAB.setVisible(true);
+            HText.setVisible(true);
+            HBox.setVisible(true);
+            UsoTxt.setVisible(true);
+            HorasTxt.setVisible(true);
+            TBox.setVisible(true);
+            DispTxt.setVisible(true);
+            DispBtn.setVisible(true);
+            LABNAME.setText("Impresoras 3D");
+
+        }
+    }//GEN-LAST:event_labcomebleActionPerformed
+
+    private void SelectEdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectEdActionPerformed
+        // TODO add your handling code here:
+
+        String selec = SelectEd.getSelectedItem() + "";
+
+        if(selec.equals("EBLE")){
+            labtxt.setVisible(true);
+            labcomeble.setVisible(true);
+
+            //System.out.println("yup");
+        }else if(selec.equals("Edificio A")){
+            labcomeble.setVisible(false);
+            labtxt.setVisible(true);
+            labtxt.setText("Se encuentra en el Computo 1");
+
+            HText.setVisible(true);
+            HBox.setVisible(true);
+            UsoTxt.setVisible(true);
+            HorasTxt.setVisible(true);
+            TBox.setVisible(true);
+            DispTxt.setVisible(true);
+            DispBtn.setVisible(true);
+            //LAB.setVisible(true);
+            LABNAME.setText("Computo 1");
+            String selecLab = "Computo 1";
+
+        }else if(selec.equals("Biblioteca Ciencias Sociales")){
+            labcomeble.setVisible(false);
+            labtxt.setVisible(true);
+            labtxt.setText("Se encuentra en biblioteca");
+            String selecLab = "Computo Biblioteca";
+            LABNAME.setText("Computo Biblioteca");
+            //LAB.setVisible(true);
+            HText.setVisible(true);
+            HBox.setVisible(true);
+            UsoTxt.setVisible(true);
+            HorasTxt.setVisible(true);
+            TBox.setVisible(true);
+            DispTxt.setVisible(true);
+            DispBtn.setVisible(true);
+
+        }
+    }//GEN-LAST:event_SelectEdActionPerformed
+
+    private void RepBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RepBtnActionPerformed
+        // TODO add your handling code here:
+        
+        String DiaRep = DiaTxt.getText();
+        
+        try {
+        
+        String sql = "SELECT * FROM VW_Reporte WHERE fecha_actual = ?";
+        java.sql.PreparedStatement stmt = net.codejava.sql.Main.connection.prepareStatement(sql);
+        stmt.setString(1, DiaRep); // Set the parameter value
+        
+        // Execute query
+        java.sql.ResultSet rs = stmt.executeQuery();
+        
+        // Process results and build the display string
+        StringBuilder resultText = new StringBuilder();
+        java.sql.ResultSetMetaData metaData = rs.getMetaData();
+        int columnCount = metaData.getColumnCount();
+        
+        StringBuilder result = new StringBuilder();
+                
+        result.append("Reporte del dia ").append(DiaRep).append("\n");
+        
+        boolean hasData = false;
+        int count = 0;
+        
+        while (rs.next()) {
+            hasData = true;
+            count++;
+            
+                String row = String.format("%d. %s | %s | %s | %s-%s | %s | %s",
+                count,
+                rs.getString("carnet"),
+                rs.getString("nombre"),
+                rs.getString("laboratorio"),
+                rs.getString("hora_inicio"),
+                rs.getString("hora_salida"),
+                rs.getString("edificio"),
+                rs.getString("pcname"));
+            
+            result.append(row).append("\n");
+        }
+        
+        if (hasData) {
+            result.append("\n");
+            result.append("Total Reservas: ").append(count);
+            downloadReportToFile(result.toString(), DiaRep);
+            CTV.setText(result.toString());
+        } else {
+            CTV.setText("No hay reservas: " + DiaRep);
+        }
+        
+        
+        
+    } catch (java.sql.SQLException e) {
+        e.printStackTrace();
+        CTV.setText("Error BD: " + e.getMessage());
+        } 
+    
+            
+    }//GEN-LAST:event_RepBtnActionPerformed
+
+    private void downloadReportToFile(String reportContent, String date) {
+    javax.swing.JFileChooser fileChooser = new javax.swing.JFileChooser();
+    fileChooser.setDialogTitle("Guardar Reporte");
+    
+    String defaultFileName = "reporte_" + date.replace("-", "") + ".txt";
+    fileChooser.setSelectedFile(new java.io.File(defaultFileName));
+    
+    int userSelection = fileChooser.showSaveDialog(this);
+    
+    if (userSelection == FileC.APPROVE_OPTION) {
+        java.io.File fileToSave = fileChooser.getSelectedFile();
+        
+
+        if (!fileToSave.getName().toLowerCase().endsWith(".txt")) {
+            fileToSave = new java.io.File(fileToSave.getAbsolutePath() + ".txt");
+        }
+        
+        try (java.io.FileWriter writer = new java.io.FileWriter(fileToSave)) {
+            writer.write(reportContent);
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+
+        }
+    }
+}
+    
+    
+    private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
+        // TODO add your handling code here:
+        ArAr.setEditable(true);
+        
+    }//GEN-LAST:event_EditBtnActionPerformed
+
+    private void updateAreaPrograms(String areaName) {
+    try {
+   
+        String areaText = ArAr.getText().trim();
+        
+        String programs = extractPrograms(areaText);
+        
+        if (programs == null || programs.isEmpty()) {
+            
+            return;
+        }
+        
+        String updateQuery = "UPDATE areas SET listado_programas = ? WHERE area = ?";
+        
+        java.sql.PreparedStatement stmt = Main.connection.prepareStatement(updateQuery);
+        stmt.setString(1, programs);
+        stmt.setString(2, areaName);
+        
+        int rowsAffected = stmt.executeUpdate();
+        
+        if (rowsAffected > 0) {
+          
+            System.out.println("yippie");
+        } else {
+          
+        }
+        
+        stmt.close();
+        
+    } catch (java.sql.SQLException e) {
+        e.printStackTrace();
+       
+        System.out.println("bruh");
+    }
+}
+
+
+    private String extractPrograms(String areaText) {
+
+        int programasIndex = areaText.indexOf("Programas: ");
+        if (programasIndex == -1) {
+            return "";
+        }
+    
+
+    return areaText.substring(programasIndex + "Programas: ".length()).trim();
+}
+    
+    private void DiaTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiaTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DiaTxtActionPerformed
+
+    private void ConfArActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfArActionPerformed
+        // TODO add your handling code here:
+        ArAr.setEditable(false);
+        
+        String AreaNombre = ConfAr.getText();
+        
+        updateAreaPrograms(AreaNombre);
+        
+    }//GEN-LAST:event_ConfArActionPerformed
+
+    private void DeshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeshBtnActionPerformed
+        if (selectedPcName == null || selectedPcName.isEmpty()) {
+        //JOptionPane.showMessageDialog(this, "Please select a PC first", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    int pcNumber = extractPcNumber(selectedPcName);
+    if (pcNumber >= 0 && pcNumber <= 20) {
+        hidePCButton(selectedPcName);
+        manuallyHiddenPCs[pcNumber] = true;
+        saveManualHidingState();
+        
+    }
+    }//GEN-LAST:event_DeshBtnActionPerformed
+
+    private void showPcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPcBtnActionPerformed
+        // TODO add your handling code here:
+        resetManualHiding();
+        
+    }//GEN-LAST:event_showPcBtnActionPerformed
 
 
     private String selectedPcName = "";//Declarando variable de la pc selccionada
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AdminBtn;
+    private javax.swing.JLabel AdminTxt;
+    private javax.swing.JTextArea ArAr;
     private javax.swing.JButton CONF;
     private javax.swing.JLabel CT;
-    private javax.swing.JLabel CTV;
+    private javax.swing.JTextArea CTV;
     private javax.swing.JTextField CarnetWr;
+    private javax.swing.JTextField ConfAr;
+    private javax.swing.JTextArea DescAr;
+    private javax.swing.JButton DeshBtn;
+    private javax.swing.JTextField DiaTxt;
     private javax.swing.JButton DispBtn;
     private javax.swing.JLabel DispTxt;
+    private javax.swing.JButton EditBtn;
     private javax.swing.JPanel EspPane;
+    private javax.swing.JFileChooser FileC;
     private javax.swing.JComboBox<String> HBox;
     private javax.swing.JLabel HText;
     private javax.swing.JLabel HorasTxt;
@@ -1554,15 +1903,16 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel MensajeTxt;
     private javax.swing.JPanel MenuP;
     private javax.swing.JPanel Mpane;
+    private javax.swing.JButton RepBtn;
     private javax.swing.JComboBox<String> SelectEd;
     private javax.swing.JComboBox<String> TBox;
     private javax.swing.JLabel UsoTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JComboBox<String> labcomeble;
     private javax.swing.JLabel labtxt;
     private javax.swing.JButton pc0;
@@ -1586,9 +1936,8 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JButton pc7;
     private javax.swing.JButton pc8;
     private javax.swing.JButton pc9;
-    private javax.swing.JLabel pcarea;
-    private javax.swing.JLabel pcdesc;
     private javax.swing.JLabel pcnametxt;
+    private javax.swing.JButton showPcBtn;
     // End of variables declaration//GEN-END:variables
 }
 

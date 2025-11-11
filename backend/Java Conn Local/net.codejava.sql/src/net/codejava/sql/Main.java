@@ -8,8 +8,7 @@ import java.sql.*; // Paquetes de jdbc
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -39,9 +38,9 @@ public class Main {
             String password = "?s0pI02j_nfD";
             connection = DriverManager.getConnection(url, user, password);
             
-            // Then create and show your Window
+           
             java.awt.EventQueue.invokeLater(() -> {
-                //new Window().setVisible(true);
+                
             });
             
         } catch (SQLException e) {
