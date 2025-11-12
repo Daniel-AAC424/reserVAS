@@ -1,3 +1,5 @@
+use reservas_p1
+
 --funcion para la validacion de disponivilidad de pc
 drop function FN_DisponibilidadPCs
 CREATE FUNCTION FN_DisponibilidadPCs

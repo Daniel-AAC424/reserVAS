@@ -97,7 +97,6 @@ public class Main {
         }
     }
     
-    
     public static boolean checkCarnetExists(String carnet) {
         Connection connection = null;
         PreparedStatement pstmt = null;

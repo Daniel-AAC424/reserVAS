@@ -1,0 +1,5 @@
+Reporte del dia 2025-11-12
+|   carnet  |           nombre               |  edificio  |laboratorio| pcname | tiempo uso  |
+1. AL100224 | Josue Alejandro Aragon Lima | EBLE | Computo 6 | PC5_C6 | 10:00-13:00
+
+Total Reservas: 1
