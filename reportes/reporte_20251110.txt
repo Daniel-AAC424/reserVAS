@@ -1,0 +1,12 @@
+Reporte del dia 2025-11-10
+|   carnet  |           nombre               |  edificio  |laboratorio| pcname | tiempo uso  |
+1. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC0_C1 | 06:30-07:30
+2. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC1_C1 | 06:30-07:30
+3. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC14_C1 | 06:30-07:30
+4. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC7_C1 | 06:30-07:30
+5. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC2_C1 | 06:30-07:30
+6. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC3_C1 | 06:30-07:30
+7. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC6_C1 | 06:30-07:30
+8. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Computo 5 | PC17_C5 | 06:30-07:30
+
+Total Reservas: 8

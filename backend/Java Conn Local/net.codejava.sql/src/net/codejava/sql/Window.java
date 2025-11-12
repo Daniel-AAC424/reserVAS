@@ -841,7 +841,7 @@ public class Window extends javax.swing.JFrame {
         }
     } 
 
-    private boolean[] manuallyHiddenPCs = new boolean[21]; // PC0 to PC20
+    private boolean[] manuallyHiddenPCs = new boolean[21];
 
     private void hideManuallyHiddenPCs() {
         for (int i = 0; i <= 20; i++) {
@@ -1527,8 +1527,7 @@ public class Window extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         String carnet = CarnetWr.getText();
-        //String pcname = pc1.getText();
-
+        
         String pcname = selectedPcName;
 
         String HoraInicio = HBox.getSelectedItem()+"";
@@ -1652,7 +1651,7 @@ public class Window extends javax.swing.JFrame {
             labtxt.setVisible(true);
             labcomeble.setVisible(true);
 
-            //System.out.println("yup");
+            
         }else if(selec.equals("Edificio A")){
             labcomeble.setVisible(false);
             labtxt.setVisible(true);
@@ -1696,12 +1695,12 @@ public class Window extends javax.swing.JFrame {
         
         String sql = "SELECT * FROM VW_Reporte WHERE fecha_actual = ?";
         java.sql.PreparedStatement stmt = net.codejava.sql.Main.connection.prepareStatement(sql);
-        stmt.setString(1, DiaRep); // Set the parameter value
+        stmt.setString(1, DiaRep); 
         
-        // Execute query
+        
         java.sql.ResultSet rs = stmt.executeQuery();
         
-        // Process results and build the display string
+        
         StringBuilder resultText = new StringBuilder();
         java.sql.ResultSetMetaData metaData = rs.getMetaData();
         int columnCount = metaData.getColumnCount();
@@ -1709,6 +1708,7 @@ public class Window extends javax.swing.JFrame {
         StringBuilder result = new StringBuilder();
                 
         result.append("Reporte del dia ").append(DiaRep).append("\n");
+        result.append("|   carnet  |           nombre               |  edificio  |laboratorio| pcname | tiempo uso  |").append("\n");
         
         boolean hasData = false;
         int count = 0;
@@ -1717,15 +1717,17 @@ public class Window extends javax.swing.JFrame {
             hasData = true;
             count++;
             
-                String row = String.format("%d. %s | %s | %s | %s-%s | %s | %s",
+                String row = String.format("%d. %s | %s | %s | %s | %s | %s-%s",
                 count,
                 rs.getString("carnet"),
                 rs.getString("nombre"),
-                rs.getString("laboratorio"),
-                rs.getString("hora_inicio"),
-                rs.getString("hora_salida"),
                 rs.getString("edificio"),
-                rs.getString("pcname"));
+                rs.getString("laboratorio"),
+                rs.getString("pcname"),
+                rs.getString("hora_inicio"),
+                rs.getString("hora_salida")
+                
+                );
             
             result.append(row).append("\n");
         }
@@ -1844,7 +1846,7 @@ public class Window extends javax.swing.JFrame {
 
     private void DeshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeshBtnActionPerformed
         if (selectedPcName == null || selectedPcName.isEmpty()) {
-            //JOptionPane.showMessageDialog(this, "Please select a PC first", "Error", JOptionPane.ERROR_MESSAGE);
+            
             return;
         }
 

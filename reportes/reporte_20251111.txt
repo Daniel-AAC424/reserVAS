@@ -1,0 +1,29 @@
+Reporte del dia 2025-11-11
+|   carnet  |           nombre               |  edificio  |laboratorio| pcname | tiempo uso  |
+1. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC1_C1 | 06:30-07:30
+2. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Animacion | PC19_AN | 06:30-07:30
+3. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Animacion | PC4_AN | 06:30-07:30
+4. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Computo 5 | PC9_C5 | 06:30-07:30
+5. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Computo 5 | PC10_C5 | 06:30-07:30
+6. AC100424 | Daniel Alejandro Ayala Centeno | Biblioteca Ciencias Sociales | Computo Biblioteca | PC0_CB | 06:30-07:30
+7. AC100424 | Daniel Alejandro Ayala Centeno | Biblioteca Ciencias Sociales | Computo Biblioteca | PC6_CB | 06:30-07:30
+8. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC1_C1 | 08:00-09:00
+9. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC15_C1 | 08:00-09:00
+10. AC100424 | Daniel Alejandro Ayala Centeno | Biblioteca Ciencias Sociales | Computo Biblioteca | PC1_CB | 08:00-09:00
+11. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Computo 6 | PC5_C6 | 06:30-07:30
+12. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Animacion | PC2_AN | 06:30-07:30
+13. AC100424 | Daniel Alejandro Ayala Centeno | Biblioteca Ciencias Sociales | Computo Biblioteca | PC2_CB | 06:30-07:30
+14. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Impresoras 3D | PC1_IM | 06:30-07:30
+15. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Cisco | PC1_CI | 06:30-07:30
+16. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Videojuegos | PC1_VD | 06:30-07:30
+17. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Impresoras 3D | PC6_IM | 06:30-07:30
+18. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC5_C1 | 06:30-07:30
+19. AC100424 | Daniel Alejandro Ayala Centeno | Biblioteca Ciencias Sociales | Computo Biblioteca | PC9_CB | 06:30-07:30
+20. AC100424 | Daniel Alejandro Ayala Centeno | Biblioteca Ciencias Sociales | Computo Biblioteca | PC1_CB | 06:30-07:30
+21. AC100424 | Daniel Alejandro Ayala Centeno | EBLE | Videojuegos | PC15_VD | 09:00-11:00
+22. AL100224 | Josue Alejandro Aragon Lima | Biblioteca Ciencias Sociales | Computo Biblioteca | PC3_CB | 06:30-07:30
+23. AL100224 | Josue Alejandro Aragon Lima | Edificio A | Computo 1 | PC2_C1 | 18:00-19:00
+24. AC100424 | Daniel Alejandro Ayala Centeno | Edificio A | Computo 1 | PC2_C1 | 06:30-07:30
+25. AL100224 | Josue Alejandro Aragon Lima | Edificio A | Computo 1 | PC6_C1 | 06:30-07:30
+
+Total Reservas: 25
