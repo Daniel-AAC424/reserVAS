@@ -22,7 +22,10 @@ constraint facultadFK foreign key (facultad) references facultades(facultad)
 
 insert into estudiantes(carnet, nombre, facultad) values 
 ('AC100424','Daniel Alejandro Ayala Centeno','Facultad de Ingenieria y Sistemas'),
-('AL100224','Josue Alejandro Aragon Lima','Facultad de Ingenieria y Sistemas');
+('AL100224','Josue Alejandro Aragon Lima','Facultad de Ingenieria y Sistemas'),
+('HB100124','Caelum Silas Hernandez Barrera','Facultad de Ingenieria y Sistemas'),
+('RR101524','Sara Rodriguez Rivas','Facultad de Ingenieria y Sistemas'),
+('AM101024','Kevin Steven Aparicio Molina','Facultad de Ingenieria y Sistemas');
 
 drop table edificios
 create table edificios(
@@ -130,114 +133,9 @@ constraint FKreserva foreign key (reservaID) references reservas(reservaID)
 --insert into reservas (carnet,edificio,laboratorio,fecha_actual)values ('AC100424','EBLE','Computo 5','4:14',DATEADD(HOUR, 1, '4:14'))
 --select * from reservas
 
-drop trigger TR_ValidarChoqueReserva
-CREATE TRIGGER TR_ValidarChoqueReserva
-ON reservas
-FOR INSERT
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    IF EXISTS (
-        SELECT 1
-        FROM reservas r
-        INNER JOIN inserted i
-            ON r.pcname = i.pcname
-           AND r.fecha_actual = i.fecha_actual
-           AND r.reservaID <> i.reservaID
-        WHERE 
-            i.hora_inicio < r.hora_salida
-        AND i.hora_salida > r.hora_inicio
-    )
-    BEGIN
-        RAISERROR('La PC ya está reservada en ese horario.', 16, 1);
-        ROLLBACK TRANSACTION;
-        RETURN;
-    END
-END;
-
-drop trigger TR_InsertarReporteHoy
-CREATE TRIGGER TR_InsertarReporteHoy
-ON reservas
-AFTER INSERT
-AS
-BEGIN
-    INSERT INTO reportes(reservaID)
-    SELECT reservaID 
-    FROM inserted
-    WHERE CAST(fecha_actual AS DATE) = CAST(GETDATE() AS DATE);
-END;
-
-drop view VW_ReporteDelDia
-CREATE VIEW VW_ReporteDelDia 
-AS
-SELECT r.reservaID, r.carnet, e.nombre, r.edificio, r.laboratorio, r.pcname, r.fecha_actual,
-CONVERT(VARCHAR(5), hora_inicio, 108) AS hora_inicio,
-CONVERT(VARCHAR(5), hora_salida, 108) AS hora_salida
-FROM reservas r
-INNER JOIN estudiantes e ON r.carnet = e.carnet
-WHERE r.fecha_actual = CAST(GETDATE() AS DATE);
-
---pruebas de los triggers y de la vista
---prueba de reservas validas
-INSERT INTO reservas (carnet, edificio, laboratorio, pcname, fecha_actual, hora_inicio, hora_salida)
-VALUES ('AL100224', 'EBLE', 'Computo 5', 'PC10_C5', CAST(GETDATE() AS DATE), '11:00', '12:00');
-
-SELECT reservaID, carnet, edificio, laboratorio, pcname,
-       fecha_actual,
-       CONVERT(VARCHAR(5), hora_inicio, 108) AS hora_inicio,
-       CONVERT(VARCHAR(5), hora_salida, 108) AS hora_salida
-FROM reservas;
-SELECT * FROM reportes;
-
---pruebas de reservas en el que choquen con otro horario
-INSERT INTO reservas (carnet, edificio, laboratorio, pcname, fecha_actual, hora_inicio, hora_salida)
-VALUES ('AL100224', 'EBLE', 'Computo 5', 'PC0_C5', CAST(GETDATE() AS DATE), '14:30', '15:30');
-
---validacion de vista
-SELECT * FROM VW_ReporteDelDia WHERE fecha_actual = '2025-11-06';
-
---funcion para la validacion de disponivilidad de pc
-drop function FN_DisponibilidadPCs
-CREATE FUNCTION FN_DisponibilidadPCs
-(
-    @laboratorio VARCHAR(30),
-    @fecha DATE,
-    @hora_inicio TIME,
-    @hora_salida TIME
-)
-RETURNS @Resultado TABLE
-(
-    pcname VARCHAR(7),
-    laboratorio VARCHAR(30),
-    estado VARCHAR(20)
-)
-AS
-BEGIN
-    INSERT INTO @Resultado
-    SELECT 
-        p.pcname,
-        p.laboratorio,
-        CASE 
-            WHEN EXISTS (
-                SELECT 1 
-                FROM reservas r
-                WHERE r.pcname = p.pcname
-                  AND r.laboratorio = @laboratorio
-                  AND r.fecha_actual = @fecha
-                  AND @hora_inicio < r.hora_salida  
-                  AND @hora_salida > r.hora_inicio
-            )
-            THEN 'Ocupada'
-            ELSE 'Disponible'
-        END AS estado
-    FROM pcs p
-    WHERE p.laboratorio = @laboratorio;
-    RETURN;
-END;
 
 
---prueba de la funcion, el orden by es para ordenar las pc por el numero que tienen, ya que sin eso estan ordenado de manera alfabetica
-SELECT * FROM FN_DisponibilidadPCs('Computo 5', CAST(GETDATE() AS DATE), '10:00', '11:00')
-ORDER BY TRY_CAST(SUBSTRING(pcname, 3, CHARINDEX('_', pcname) - 3) AS INT);
+
+
+
 

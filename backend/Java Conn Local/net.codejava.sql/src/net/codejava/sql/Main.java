@@ -56,8 +56,7 @@ public class Main {
         window.setLocationRelativeTo(null);//Centra la ventana
         window.setResizable(false);
         
-        
-        
+      
     }
     
     public static boolean insertReserva(String carnet,String selec, String selecLab,String pcname,String HoraInicio,Integer TiempoUsoInt) {
@@ -100,35 +99,35 @@ public class Main {
     
     
     public static boolean checkCarnetExists(String carnet) {
-    Connection connection = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-    
-    try {
-        connection = DriverManager.getConnection(url, user, password);
-        System.out.println("Conexion exitosa para verificar carnet");
-        
-        String sql = "SELECT carnet FROM estudiantes WHERE carnet = ?";
-        pstmt = connection.prepareStatement(sql);
-        pstmt.setString(1, carnet);
-        
-        rs = pstmt.executeQuery();
-        
-        return rs.next();
-        
-    } catch (SQLException e) {
-        System.err.println("Database error: " + e.getMessage());
-        return false;
-    } finally {
+        Connection connection = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
         try {
-            if (rs != null) rs.close();
-            if (pstmt != null) pstmt.close();
-            if (connection != null) connection.close();
+            connection = DriverManager.getConnection(url, user, password);
+            System.out.println("Conexion exitosa para verificar carnet");
+
+            String sql = "SELECT carnet FROM estudiantes WHERE carnet = ?";
+            pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, carnet);
+
+            rs = pstmt.executeQuery();
+
+            return rs.next();
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Database error: " + e.getMessage());
+            return false;
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
-}
     
 }
 

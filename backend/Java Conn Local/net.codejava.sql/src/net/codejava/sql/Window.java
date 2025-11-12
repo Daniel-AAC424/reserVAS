@@ -696,41 +696,39 @@ public class Window extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentHidden
  
     private void setPcDescription(String pcName) {
-        
-        
-    try {
-        String query = "SELECT a.processador, a.memmoria, a.tarjeta_grafica, a.espacio, a.os FROM pcs p " +
-                      "INNER JOIN areas a ON a.area = p.area " +
-                      "WHERE pcname = ?";
-        
-       
-        java.sql.PreparedStatement stmt = Main.connection.prepareStatement(query);
-        stmt.setString(1, pcName);
-        java.sql.ResultSet rs = stmt.executeQuery();
-        
-        if (rs.next()) {
-            String processor = rs.getString("processador");
-            String memory = rs.getString("memmoria");
-            String graphics = rs.getString("tarjeta_grafica");
-            String storage = rs.getString("espacio");
-            String os = rs.getString("os");
-            
-            String description = String.format("Procesador: %s\nMemoria: %s\nGrafica: %s\nEspacio: %s\nOS: %s", 
-                                             processor, memory, graphics, storage, os);
-            
-            DescAr.setText("Descripcion: "+description);
-        } else {
-            
-            
+        try {
+            String query = "SELECT a.processador, a.memmoria, a.tarjeta_grafica, a.espacio, a.os FROM pcs p " +
+                          "INNER JOIN areas a ON a.area = p.area " +
+                          "WHERE pcname = ?";
+
+
+            java.sql.PreparedStatement stmt = Main.connection.prepareStatement(query);
+            stmt.setString(1, pcName);
+            java.sql.ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                String processor = rs.getString("processador");
+                String memory = rs.getString("memmoria");
+                String graphics = rs.getString("tarjeta_grafica");
+                String storage = rs.getString("espacio");
+                String os = rs.getString("os");
+
+                String description = String.format("Procesador: %s\nMemoria: %s\nGrafica: %s\nEspacio: %s\nOS: %s", 
+                                                 processor, memory, graphics, storage, os);
+
+                DescAr.setText("Descripcion: "+description);
+            } else {
+
+
+            }
+
+            rs.close();
+            stmt.close();
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+
         }
-        
-        rs.close();
-        stmt.close();
-    } catch (java.sql.SQLException e) {
-        e.printStackTrace();
-        
     }
-}
 
     private void setPcArea(String pcName) {
     try {
@@ -757,7 +755,6 @@ public class Window extends javax.swing.JFrame {
         rs.close();
         stmt.close();
     } catch (java.sql.SQLException e) {
-        e.printStackTrace();
         ArAr.setText("Error cargando informacion");
     }
 }
@@ -846,7 +843,6 @@ public class Window extends javax.swing.JFrame {
 
     private boolean[] manuallyHiddenPCs = new boolean[21]; // PC0 to PC20
 
-
     private void hideManuallyHiddenPCs() {
         for (int i = 0; i <= 20; i++) {
             if (manuallyHiddenPCs[i]) {
@@ -854,7 +850,6 @@ public class Window extends javax.swing.JFrame {
             }
         }
     }
-
 
     private int extractPcNumber(String fullPcName) {
         try {
@@ -866,7 +861,7 @@ public class Window extends javax.swing.JFrame {
         }
     }
 
-private void loadManualHidingState() {
+    private void loadManualHidingState() {
     try {
         java.io.File file = new java.io.File("pc_hiding_state.txt");
         if (file.exists()) {
@@ -887,8 +882,6 @@ private void loadManualHidingState() {
     }
 }
 
-    
-
     private void saveManualHidingState() {
         try {
             java.io.PrintWriter writer = new java.io.PrintWriter("pc_hiding_state.txt");
@@ -902,8 +895,6 @@ private void loadManualHidingState() {
         }
     }
 
-
-
     private void resetManualHiding() {
         for (int i = 0; i <= 20; i++) {
             manuallyHiddenPCs[i] = false;
@@ -916,7 +907,6 @@ private void loadManualHidingState() {
         
     }
 
-    
     private void hidePCButton(String fullPcName) {
     // Extrae el numero de pc solamente
     String pcNumber = fullPcName.split("_")[0];
@@ -1110,8 +1100,7 @@ private void loadManualHidingState() {
 
         setPcDescription(selectedPcName);
         setPcArea(selectedPcName);
-        //pcdesc.setLineWrap(true);
-        //pcdesc.setWrapStyleWord(true);
+        
     }//GEN-LAST:event_pc18ActionPerformed
 
     private void pc17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pc17ActionPerformed
@@ -1786,7 +1775,6 @@ private void loadManualHidingState() {
     }
 }
     
-    
     private void EditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditBtnActionPerformed
         // TODO add your handling code here:
         ArAr.setEditable(true);
@@ -1829,7 +1817,6 @@ private void loadManualHidingState() {
     }
 }
 
-
     private String extractPrograms(String areaText) {
 
         int programasIndex = areaText.indexOf("Programas: ");
@@ -1857,17 +1844,17 @@ private void loadManualHidingState() {
 
     private void DeshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeshBtnActionPerformed
         if (selectedPcName == null || selectedPcName.isEmpty()) {
-        //JOptionPane.showMessageDialog(this, "Please select a PC first", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-    
-    int pcNumber = extractPcNumber(selectedPcName);
-    if (pcNumber >= 0 && pcNumber <= 20) {
-        hidePCButton(selectedPcName);
-        manuallyHiddenPCs[pcNumber] = true;
-        saveManualHidingState();
-        
-    }
+            //JOptionPane.showMessageDialog(this, "Please select a PC first", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int pcNumber = extractPcNumber(selectedPcName);
+        if (pcNumber >= 0 && pcNumber <= 20) {
+            hidePCButton(selectedPcName);
+            manuallyHiddenPCs[pcNumber] = true;
+            saveManualHidingState();
+
+        }
     }//GEN-LAST:event_DeshBtnActionPerformed
 
     private void showPcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPcBtnActionPerformed
